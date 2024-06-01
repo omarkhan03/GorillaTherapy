@@ -17,6 +17,8 @@ public class SwingingArmMotion : MonoBehaviour
     [SerializeField] private Vector3 PlayerPositionCurrentFrame;
     [SerializeField] private Vector3 PositionCurrentFrameLeftHand;
     [SerializeField] private Vector3 PositionCurrentFrameRightHand;
+    public Collider collider;
+    public Collider environment;
 
     //Speed
     [SerializeField] private float Speed = 70;
@@ -54,6 +56,16 @@ public class SwingingArmMotion : MonoBehaviour
         if(Time.timeSinceLevelLoad > 1f)
         {
             transform.position += ForwardDirection.transform.forward * HandSpeed * Speed * Time.deltaTime;
+
+            if (collider.bounds.Intersects(environment.bounds))
+            {
+                transform.position -= ForwardDirection.transform.forward * HandSpeed * Speed * Time.deltaTime;
+            }
+        }
+
+        if (collider.bounds.Intersects(environment.bounds))
+        {
+            Debug.Log("bump");
         }
 
         // set previous position of hands for next frame
@@ -61,5 +73,7 @@ public class SwingingArmMotion : MonoBehaviour
         PositionPreviousFrameRightHand = PositionCurrentFrameRightHand;
         // set player position previous frame
         PlayerPositionPreviousFrame = PlayerPositionCurrentFrame;
+        
+        
     }
 }
