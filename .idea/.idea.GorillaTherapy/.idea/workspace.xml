@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2859a60-cc49-4ae3-aab5-020abd4421fa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/NewGorillaLocomotionScripts/Player1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GorillaTherapy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GorillaTherapy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Gorilla.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Gorilla.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HandsDemoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HandsDemoScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SwingingArmMotion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SwingingArmMotion.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1716859511607</updated>
       <workItem from="1716859513919" duration="161000" />
-      <workItem from="1717194586503" duration="4290000" />
+      <workItem from="1717194586503" duration="5993000" />
     </task>
     <servers />
   </component>

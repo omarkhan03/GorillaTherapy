@@ -57,10 +57,11 @@ public class SwingingArmMotion : MonoBehaviour
         {
             transform.position += ForwardDirection.transform.forward * HandSpeed * Speed * Time.deltaTime;
 
-            if (collider.bounds.Intersects(environment.bounds))
-            {
-                transform.position -= ForwardDirection.transform.forward * HandSpeed * Speed * Time.deltaTime;
-            }
+            
+            // if (collider.bounds.Intersects(environment.bounds))
+            // {
+            //     transform.position -= ForwardDirection.transform.forward * HandSpeed * Speed * Time.deltaTime;
+            // }
         }
 
         if (collider.bounds.Intersects(environment.bounds))
