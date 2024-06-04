@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -55,10 +56,24 @@ public class SwingingArmMotion : MonoBehaviour
         // Read the value of the grip buttons
         bool leftGripPressed = inputActions.Player.LeftGrip.ReadValue<float>() > 0.5f;
         bool rightGripPressed = inputActions.Player.RightGrip.ReadValue<float>() > 0.5f;
+
+        Vector2 joystickValue = inputActions.Player.Joystick.ReadValue<Vector2>();
         
-        // get forward direction from the center eye camera and set it to the forward direction object
+        // set forward direction (if joystick not used, default to the direction the player's head is facing)
         float yRotation = MainCamera.transform.eulerAngles.y;
-        ForwardDirection.transform.eulerAngles = new Vector3(0, yRotation, 0);
+
+        if (joystickValue == Vector2.zero)
+        {
+            ForwardDirection.transform.eulerAngles = new Vector3(0, yRotation, 0);
+        }
+        else
+        {
+            // ForwardDirection.transform.eulerAngles = new Vector3(joystickValue.x, yRotation, joystickValue.y);
+            ForwardDirection.transform.forward = MainCamera.transform.right * joystickValue.x + MainCamera.transform.forward * joystickValue.y;
+        }
+        
+        Debug.Log(ForwardDirection.transform.eulerAngles);
+
 
         // get positons of hands
         PositionCurrentFrameLeftHand = LeftHand.transform.position;

@@ -45,6 +45,15 @@ public partial class @VRInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Joystick"",
+                    ""type"": ""Value"",
+                    ""id"": ""46cbba3a-8c97-4762-861d-111ff061ff7d"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -69,6 +78,17 @@ public partial class @VRInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""RightGrip"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b5b9bbcd-182c-477c-81e8-4324aaa23442"",
+                    ""path"": ""<XRController>{RightHand}/thumbstick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Joystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -79,6 +99,7 @@ public partial class @VRInputActions: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_LeftGrip = m_Player.FindAction("LeftGrip", throwIfNotFound: true);
         m_Player_RightGrip = m_Player.FindAction("RightGrip", throwIfNotFound: true);
+        m_Player_Joystick = m_Player.FindAction("Joystick", throwIfNotFound: true);
     }
 
     ~@VRInputActions()
@@ -147,12 +168,14 @@ public partial class @VRInputActions: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_LeftGrip;
     private readonly InputAction m_Player_RightGrip;
+    private readonly InputAction m_Player_Joystick;
     public struct PlayerActions
     {
         private @VRInputActions m_Wrapper;
         public PlayerActions(@VRInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @LeftGrip => m_Wrapper.m_Player_LeftGrip;
         public InputAction @RightGrip => m_Wrapper.m_Player_RightGrip;
+        public InputAction @Joystick => m_Wrapper.m_Player_Joystick;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -168,6 +191,9 @@ public partial class @VRInputActions: IInputActionCollection2, IDisposable
             @RightGrip.started += instance.OnRightGrip;
             @RightGrip.performed += instance.OnRightGrip;
             @RightGrip.canceled += instance.OnRightGrip;
+            @Joystick.started += instance.OnJoystick;
+            @Joystick.performed += instance.OnJoystick;
+            @Joystick.canceled += instance.OnJoystick;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -178,6 +204,9 @@ public partial class @VRInputActions: IInputActionCollection2, IDisposable
             @RightGrip.started -= instance.OnRightGrip;
             @RightGrip.performed -= instance.OnRightGrip;
             @RightGrip.canceled -= instance.OnRightGrip;
+            @Joystick.started -= instance.OnJoystick;
+            @Joystick.performed -= instance.OnJoystick;
+            @Joystick.canceled -= instance.OnJoystick;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -199,5 +228,6 @@ public partial class @VRInputActions: IInputActionCollection2, IDisposable
     {
         void OnLeftGrip(InputAction.CallbackContext context);
         void OnRightGrip(InputAction.CallbackContext context);
+        void OnJoystick(InputAction.CallbackContext context);
     }
 }
