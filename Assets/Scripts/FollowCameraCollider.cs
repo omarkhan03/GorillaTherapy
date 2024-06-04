@@ -24,7 +24,7 @@ public class FollowCameraCollider : MonoBehaviour
 
         offset = mainCamera.localPosition;
         
-        Debug.Log(offset);
+        // Debug.Log(offset);
 
         body.center = offset;
 
