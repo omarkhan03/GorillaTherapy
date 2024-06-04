@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SwingingArmMotion : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class SwingingArmMotion : MonoBehaviour
     //Speed
     [SerializeField] private float Speed = 70;
     [SerializeField] private float HandSpeed;
+    
+    public VRInputActions inputActions;
+
 
     void Start()
     {
@@ -28,10 +32,30 @@ public class SwingingArmMotion : MonoBehaviour
         PositionPreviousFrameLeftHand = LeftHand.transform.position; //set previous positions
         PositionPreviousFrameRightHand = RightHand.transform.position;
     }
+    
+    private void Awake()
+    {
+        inputActions = new VRInputActions();
+    }
+
+    private void OnEnable()
+    {
+        inputActions.Enable();
+    }
+
+    private void OnDisable()
+    {
+        inputActions.Disable();
+    }
+
 
     // Update is called once per frame
     void Update()
     {
+        // Read the value of the grip buttons
+        bool leftGripPressed = inputActions.Player.LeftGrip.ReadValue<float>() > 0.5f;
+        bool rightGripPressed = inputActions.Player.RightGrip.ReadValue<float>() > 0.5f;
+        
         // get forward direction from the center eye camera and set it to the forward direction object
         float yRotation = MainCamera.transform.eulerAngles.y;
         ForwardDirection.transform.eulerAngles = new Vector3(0, yRotation, 0);
@@ -53,7 +77,13 @@ public class SwingingArmMotion : MonoBehaviour
 
         if(Time.timeSinceLevelLoad > 1f)
         {
-            transform.position += ForwardDirection.transform.forward * HandSpeed * Speed * Time.deltaTime;
+
+            if (leftGripPressed && rightGripPressed)
+            {
+                transform.position += ForwardDirection.transform.forward * HandSpeed * Speed * Time.deltaTime;
+
+            }
+            
         }
         
 

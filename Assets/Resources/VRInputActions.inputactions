@@ -1,0 +1,54 @@
+{
+    "name": "VRInputActions",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "e472b327-b9b9-42e0-b49f-a44ed1c26cf7",
+            "actions": [
+                {
+                    "name": "LeftGrip",
+                    "type": "Button",
+                    "id": "a849f957-64a5-4245-9227-69bf7f60881d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightGrip",
+                    "type": "Button",
+                    "id": "cfd9ab6c-3dd1-43b1-8400-9d55cb4da92b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "09a6c97b-433c-43da-bb9d-577f6b3a75b5",
+                    "path": "<XRController>{LeftHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftGrip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "25bb72a4-0e88-4013-8fa6-34651a2c082f",
+                    "path": "<XRController>{RightHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightGrip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
