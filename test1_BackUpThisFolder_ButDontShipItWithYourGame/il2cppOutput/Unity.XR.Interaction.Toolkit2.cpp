@@ -970,6 +970,8 @@ struct XRBodyYawRotation_tFC9A0A4B5CC6056F52ABC40DDB3EFDE37292B308;
 struct XRCameraForwardXZAlignment_tFD0381AA640699170A0692F986B53BE7163C26C6;
 // UnityEngine.XR.Interaction.Toolkit.XRController
 struct XRController_t928E104C899E51FDE12C0A8AC68874587C46C28F;
+// UnityEngine.XR.Hands.XRHandSubsystem
+struct XRHandSubsystem_t0EB20D332ADF52A334449A240A3FDD6844EEA92C;
 // UnityEngine.XR.Interaction.Toolkit.Inputs.Readers.XRInputButtonReader
 struct XRInputButtonReader_t0727CFE55AD1B8ECEFCD382660D9AC0DA1639515;
 // UnityEngine.XR.Interaction.Toolkit.Inputs.Readers.XRInputValueReader
@@ -6209,20 +6211,24 @@ struct XRInputModalityManager_tF0478EEA921FE18830A3B2C01AB9AF15A0FEEAAA  : publi
 	UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977* ___m_MotionControllerModeStarted_10;
 	// UnityEngine.Events.UnityEvent UnityEngine.XR.Interaction.Toolkit.Inputs.XRInputModalityManager::m_MotionControllerModeEnded
 	UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977* ___m_MotionControllerModeEnded_11;
+	// UnityEngine.XR.Hands.XRHandSubsystem UnityEngine.XR.Interaction.Toolkit.Inputs.XRInputModalityManager::m_HandSubsystem
+	XRHandSubsystem_t0EB20D332ADF52A334449A240A3FDD6844EEA92C* ___m_HandSubsystem_12;
+	// System.Boolean UnityEngine.XR.Interaction.Toolkit.Inputs.XRInputModalityManager::m_LoggedMissingHandSubsystem
+	bool ___m_LoggedMissingHandSubsystem_13;
 	// UnityEngine.XR.Interaction.Toolkit.Inputs.XRInputModalityManager/TrackedDeviceMonitor UnityEngine.XR.Interaction.Toolkit.Inputs.XRInputModalityManager::m_TrackedDeviceMonitor
-	TrackedDeviceMonitor_t9664A1B9DC4D949162FB2E6E435640B686407962* ___m_TrackedDeviceMonitor_12;
+	TrackedDeviceMonitor_t9664A1B9DC4D949162FB2E6E435640B686407962* ___m_TrackedDeviceMonitor_14;
 	// UnityEngine.XR.Interaction.Toolkit.Inputs.XRInputModalityManager/InputDeviceMonitor UnityEngine.XR.Interaction.Toolkit.Inputs.XRInputModalityManager::m_InputDeviceMonitor
-	InputDeviceMonitor_t6EDC57AF699FF3D1F95DD2E638416BC7A4FBC957* ___m_InputDeviceMonitor_13;
+	InputDeviceMonitor_t6EDC57AF699FF3D1F95DD2E638416BC7A4FBC957* ___m_InputDeviceMonitor_15;
 	// UnityEngine.XR.Interaction.Toolkit.Inputs.XRInputModalityManager/InputMode UnityEngine.XR.Interaction.Toolkit.Inputs.XRInputModalityManager::m_LeftInputMode
-	int32_t ___m_LeftInputMode_15;
+	int32_t ___m_LeftInputMode_17;
 	// UnityEngine.XR.Interaction.Toolkit.Inputs.XRInputModalityManager/InputMode UnityEngine.XR.Interaction.Toolkit.Inputs.XRInputModalityManager::m_RightInputMode
-	int32_t ___m_RightInputMode_16;
+	int32_t ___m_RightInputMode_18;
 };
 
 struct XRInputModalityManager_tF0478EEA921FE18830A3B2C01AB9AF15A0FEEAAA_StaticFields
 {
 	// Unity.XR.CoreUtils.Bindings.Variables.BindableEnum`1<UnityEngine.XR.Interaction.Toolkit.Inputs.XRInputModalityManager/InputMode> UnityEngine.XR.Interaction.Toolkit.Inputs.XRInputModalityManager::s_CurrentInputMode
-	BindableEnum_1_t3E1A071A68D0511716E071A3195156A38D3EBC71* ___s_CurrentInputMode_14;
+	BindableEnum_1_t3E1A071A68D0511716E071A3195156A38D3EBC71* ___s_CurrentInputMode_16;
 };
 
 // UnityEngine.XR.Interaction.Toolkit.XRInteractionManager
@@ -40003,7 +40009,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* XRInputModalityMan
 	{
 		// public static IReadOnlyBindableVariable<InputMode> currentInputMode => s_CurrentInputMode;
 		il2cpp_codegen_runtime_class_init_inline(XRInputModalityManager_tF0478EEA921FE18830A3B2C01AB9AF15A0FEEAAA_il2cpp_TypeInfo_var);
-		BindableEnum_1_t3E1A071A68D0511716E071A3195156A38D3EBC71* L_0 = ((XRInputModalityManager_tF0478EEA921FE18830A3B2C01AB9AF15A0FEEAAA_StaticFields*)il2cpp_codegen_static_fields_for(XRInputModalityManager_tF0478EEA921FE18830A3B2C01AB9AF15A0FEEAAA_il2cpp_TypeInfo_var))->___s_CurrentInputMode_14;
+		BindableEnum_1_t3E1A071A68D0511716E071A3195156A38D3EBC71* L_0 = ((XRInputModalityManager_tF0478EEA921FE18830A3B2C01AB9AF15A0FEEAAA_StaticFields*)il2cpp_codegen_static_fields_for(XRInputModalityManager_tF0478EEA921FE18830A3B2C01AB9AF15A0FEEAAA_il2cpp_TypeInfo_var))->___s_CurrentInputMode_16;
 		return L_0;
 	}
 }

@@ -924,6 +924,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteralC2451B8C6D92CA7D8CE2544B065B761C4B4C9647
 IL2CPP_EXTERN_C String_t* _stringLiteralC26AE6F38B24292B9F4A89F463BE2C43F48DEBD1;
 IL2CPP_EXTERN_C String_t* _stringLiteralC5F6475699851D077E0F965E3C29BEB8A33E339A;
 IL2CPP_EXTERN_C String_t* _stringLiteralCA0F65034D6B6BD3BB9E353144259AC585587137;
+IL2CPP_EXTERN_C String_t* _stringLiteralCE4026E40BC769AEFB28610F5FE8D1C5507EA2B4;
 IL2CPP_EXTERN_C String_t* _stringLiteralD04950964E883490D4CCE5E2BB5659308B237EA5;
 IL2CPP_EXTERN_C String_t* _stringLiteralD408E794AF2B358E256380A4F7BA14299C3D5801;
 IL2CPP_EXTERN_C String_t* _stringLiteralD4D9018374577033D15B6167431AD3810E804E83;
@@ -8115,6 +8116,8 @@ struct DualShockGamepad_tFD374BEA0FEDE61EBC323C8F8CD595BAB5171C8B  : public Game
 	ButtonControl_t85949109B98AAF5B7ADC0285F0EC98A61EC88ECF* ___U3CL3U3Ek__BackingField_70;
 	// UnityEngine.InputSystem.Controls.ButtonControl UnityEngine.InputSystem.DualShock.DualShockGamepad::<R3>k__BackingField
 	ButtonControl_t85949109B98AAF5B7ADC0285F0EC98A61EC88ECF* ___U3CR3U3Ek__BackingField_71;
+	// UnityEngine.InputSystem.HID.HID/HIDDeviceDescriptor UnityEngine.InputSystem.DualShock.DualShockGamepad::<hidDescriptor>k__BackingField
+	HIDDeviceDescriptor_tC52CF92386ACA63743BEFB7776A8C1E152A6DB59 ___U3ChidDescriptorU3Ek__BackingField_73;
 };
 
 struct DualShockGamepad_tFD374BEA0FEDE61EBC323C8F8CD595BAB5171C8B_StaticFields
@@ -10068,6 +10071,16 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void DualShockGamepad_set_L3_mD8C
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ButtonControl_t85949109B98AAF5B7ADC0285F0EC98A61EC88ECF* Gamepad_get_rightStickButton_m9A8377135FDA7EA2EA6219A715092F0E62ADBC55_inline (Gamepad_tA8C0E40B4F0828615C6C6E1A69AAEBE5AA643A4C* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.InputSystem.DualShock.DualShockGamepad::set_R3(UnityEngine.InputSystem.Controls.ButtonControl)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void DualShockGamepad_set_R3_mF4834C8E3EB76B2C7C91F874D6022770604A5CDC_inline (DualShockGamepad_tFD374BEA0FEDE61EBC323C8F8CD595BAB5171C8B* __this, ButtonControl_t85949109B98AAF5B7ADC0285F0EC98A61EC88ECF* ___value0, const RuntimeMethod* method) ;
+// System.String UnityEngine.InputSystem.Layouts.InputDeviceDescription::get_capabilities()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* InputDeviceDescription_get_capabilities_mEBF36ED5663709FCA039D1AEA87F6B6C404E76CD_inline (InputDeviceDescription_tE86DD77422AAF60ADDAC788B31E5A05E739B708F* __this, const RuntimeMethod* method) ;
+// System.String UnityEngine.InputSystem.Layouts.InputDeviceDescription::get_interfaceName()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* InputDeviceDescription_get_interfaceName_m087CF7E83BAF1E6C6375B3F16A9FAA3A71717D07_inline (InputDeviceDescription_tE86DD77422AAF60ADDAC788B31E5A05E739B708F* __this, const RuntimeMethod* method) ;
+// System.Boolean System.String::op_Equality(System.String,System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1 (String_t* ___a0, String_t* ___b1, const RuntimeMethod* method) ;
+// UnityEngine.InputSystem.HID.HID/HIDDeviceDescriptor UnityEngine.InputSystem.HID.HID/HIDDeviceDescriptor::FromJson(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HIDDeviceDescriptor_tC52CF92386ACA63743BEFB7776A8C1E152A6DB59 HIDDeviceDescriptor_FromJson_mEEA8B6998BD6C495ECD4B184C678106ACDFC0A73 (String_t* ___json0, const RuntimeMethod* method) ;
+// System.Void UnityEngine.InputSystem.DualShock.DualShockGamepad::set_hidDescriptor(UnityEngine.InputSystem.HID.HID/HIDDeviceDescriptor)
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void DualShockGamepad_set_hidDescriptor_m1F5D94BCCA35B4EACABD048AA7E097E24EC6233B_inline (DualShockGamepad_tFD374BEA0FEDE61EBC323C8F8CD595BAB5171C8B* __this, HIDDeviceDescriptor_tC52CF92386ACA63743BEFB7776A8C1E152A6DB59 ___value0, const RuntimeMethod* method) ;
 // System.Void UnityEngine.InputSystem.Gamepad::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Gamepad__ctor_m91DEC6DDDA705B1A49C7964389CA1880CBFD9748 (Gamepad_tA8C0E40B4F0828615C6C6E1A69AAEBE5AA643A4C* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.InputSystem.InputSystem::RegisterLayout<UnityEngine.InputSystem.DualShock.DualShockGamepad>(System.String,System.Nullable`1<UnityEngine.InputSystem.Layouts.InputDeviceMatcher>)
@@ -10230,14 +10243,8 @@ inline void InputSystem_RegisterLayout_TisAndroidStepCounter_t60ECCD106CD8AD94CB
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_IsNullOrEmpty_mEA9E3FB005AC28FE02E69FCF95A7B8456192B478 (String_t* ___value0, const RuntimeMethod* method) ;
 // System.Boolean System.String::op_Inequality(System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6 (String_t* ___a0, String_t* ___b1, const RuntimeMethod* method) ;
-// System.String UnityEngine.InputSystem.Layouts.InputDeviceDescription::get_interfaceName()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* InputDeviceDescription_get_interfaceName_m087CF7E83BAF1E6C6375B3F16A9FAA3A71717D07_inline (InputDeviceDescription_tE86DD77422AAF60ADDAC788B31E5A05E739B708F* __this, const RuntimeMethod* method) ;
-// System.String UnityEngine.InputSystem.Layouts.InputDeviceDescription::get_capabilities()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* InputDeviceDescription_get_capabilities_mEBF36ED5663709FCA039D1AEA87F6B6C404E76CD_inline (InputDeviceDescription_tE86DD77422AAF60ADDAC788B31E5A05E739B708F* __this, const RuntimeMethod* method) ;
 // System.String UnityEngine.InputSystem.Layouts.InputDeviceDescription::get_deviceClass()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* InputDeviceDescription_get_deviceClass_m59E89FD7B104B4E23CB6AA979500CD0330FFBF26_inline (InputDeviceDescription_tE86DD77422AAF60ADDAC788B31E5A05E739B708F* __this, const RuntimeMethod* method) ;
-// System.Boolean System.String::op_Equality(System.String,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1 (String_t* ___a0, String_t* ___b1, const RuntimeMethod* method) ;
 // UnityEngine.InputSystem.Android.LowLevel.AndroidDeviceCapabilities UnityEngine.InputSystem.Android.LowLevel.AndroidDeviceCapabilities::FromJson(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidDeviceCapabilities_t732862069CD4B6CB4EE3B7CD987C89F1BD93151D AndroidDeviceCapabilities_FromJson_m96771BDC33AB2A0A1F3707B977AD76E8FA7009DB (String_t* ___json0, const RuntimeMethod* method) ;
 // System.Boolean System.Linq.Enumerable::Contains<UnityEngine.InputSystem.Android.LowLevel.AndroidAxis>(System.Collections.Generic.IEnumerable`1<TSource>,TSource)
@@ -18989,6 +18996,29 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DualShockGamepad_set_current_m93FA2FA12D
 		return;
 	}
 }
+// UnityEngine.InputSystem.HID.HID/HIDDeviceDescriptor UnityEngine.InputSystem.DualShock.DualShockGamepad::get_hidDescriptor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HIDDeviceDescriptor_tC52CF92386ACA63743BEFB7776A8C1E152A6DB59 DualShockGamepad_get_hidDescriptor_mAC7CA8436E5D0B6AB8C7D8ABFB8272AE443CB963 (DualShockGamepad_tFD374BEA0FEDE61EBC323C8F8CD595BAB5171C8B* __this, const RuntimeMethod* method) 
+{
+	{
+		// internal HID.HID.HIDDeviceDescriptor hidDescriptor { get; private set; }
+		HIDDeviceDescriptor_tC52CF92386ACA63743BEFB7776A8C1E152A6DB59 L_0 = __this->___U3ChidDescriptorU3Ek__BackingField_73;
+		return L_0;
+	}
+}
+// System.Void UnityEngine.InputSystem.DualShock.DualShockGamepad::set_hidDescriptor(UnityEngine.InputSystem.HID.HID/HIDDeviceDescriptor)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DualShockGamepad_set_hidDescriptor_m1F5D94BCCA35B4EACABD048AA7E097E24EC6233B (DualShockGamepad_tFD374BEA0FEDE61EBC323C8F8CD595BAB5171C8B* __this, HIDDeviceDescriptor_tC52CF92386ACA63743BEFB7776A8C1E152A6DB59 ___value0, const RuntimeMethod* method) 
+{
+	{
+		// internal HID.HID.HIDDeviceDescriptor hidDescriptor { get; private set; }
+		HIDDeviceDescriptor_tC52CF92386ACA63743BEFB7776A8C1E152A6DB59 L_0 = ___value0;
+		__this->___U3ChidDescriptorU3Ek__BackingField_73 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)&(((&__this->___U3ChidDescriptorU3Ek__BackingField_73))->___elements_7), (void*)NULL);
+		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
+		Il2CppCodeGenWriteBarrier((void**)&(((&__this->___U3ChidDescriptorU3Ek__BackingField_73))->___collections_8), (void*)NULL);
+		#endif
+		return;
+	}
+}
 // System.Void UnityEngine.InputSystem.DualShock.DualShockGamepad::MakeCurrent()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DualShockGamepad_MakeCurrent_m9AC673C62EC29FECCEE14566A4947A6A9E58F22A (DualShockGamepad_tFD374BEA0FEDE61EBC323C8F8CD595BAB5171C8B* __this, const RuntimeMethod* method) 
 {
@@ -19034,6 +19064,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DualShockGamepad_FinishSetup_m4679E4AAE3
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&InputControl_GetChildControl_TisButtonControl_t85949109B98AAF5B7ADC0285F0EC98A61EC88ECF_m37B3269440E54D5C867480E334993426D47F9044_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral05B5896E41F6CE375015DD206C28094820DE1498);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralCE4026E40BC769AEFB28610F5FE8D1C5507EA2B4);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -19075,6 +19106,38 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DualShockGamepad_FinishSetup_m4679E4AAE3
 		ButtonControl_t85949109B98AAF5B7ADC0285F0EC98A61EC88ECF* L_8;
 		L_8 = Gamepad_get_rightStickButton_m9A8377135FDA7EA2EA6219A715092F0E62ADBC55_inline(__this, NULL);
 		DualShockGamepad_set_R3_mF4834C8E3EB76B2C7C91F874D6022770604A5CDC_inline(__this, L_8, NULL);
+		// if (m_Description.capabilities != null && m_Description.interfaceName == "HID")
+		InputDeviceDescription_tE86DD77422AAF60ADDAC788B31E5A05E739B708F* L_9 = (&((InputDevice_t8BCF67533E872A75779C24C93D1D7085B72D364B*)__this)->___m_Description_31);
+		String_t* L_10;
+		L_10 = InputDeviceDescription_get_capabilities_mEBF36ED5663709FCA039D1AEA87F6B6C404E76CD_inline(L_9, NULL);
+		if (!L_10)
+		{
+			goto IL_00b1;
+		}
+	}
+	{
+		InputDeviceDescription_tE86DD77422AAF60ADDAC788B31E5A05E739B708F* L_11 = (&((InputDevice_t8BCF67533E872A75779C24C93D1D7085B72D364B*)__this)->___m_Description_31);
+		String_t* L_12;
+		L_12 = InputDeviceDescription_get_interfaceName_m087CF7E83BAF1E6C6375B3F16A9FAA3A71717D07_inline(L_11, NULL);
+		bool L_13;
+		L_13 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_12, _stringLiteralCE4026E40BC769AEFB28610F5FE8D1C5507EA2B4, NULL);
+		if (!L_13)
+		{
+			goto IL_00b1;
+		}
+	}
+	{
+		// hidDescriptor = HID.HID.HIDDeviceDescriptor.FromJson(m_Description.capabilities);
+		InputDeviceDescription_tE86DD77422AAF60ADDAC788B31E5A05E739B708F* L_14 = (&((InputDevice_t8BCF67533E872A75779C24C93D1D7085B72D364B*)__this)->___m_Description_31);
+		String_t* L_15;
+		L_15 = InputDeviceDescription_get_capabilities_mEBF36ED5663709FCA039D1AEA87F6B6C404E76CD_inline(L_14, NULL);
+		HIDDeviceDescriptor_tC52CF92386ACA63743BEFB7776A8C1E152A6DB59 L_16;
+		L_16 = HIDDeviceDescriptor_FromJson_mEEA8B6998BD6C495ECD4B184C678106ACDFC0A73(L_15, NULL);
+		DualShockGamepad_set_hidDescriptor_m1F5D94BCCA35B4EACABD048AA7E097E24EC6233B_inline(__this, L_16, NULL);
+	}
+
+IL_00b1:
+	{
 		// }
 		return;
 	}
@@ -43012,6 +43075,14 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void DualShockGamepad_set_R3_mF48
 		return;
 	}
 }
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* InputDeviceDescription_get_capabilities_mEBF36ED5663709FCA039D1AEA87F6B6C404E76CD_inline (InputDeviceDescription_tE86DD77422AAF60ADDAC788B31E5A05E739B708F* __this, const RuntimeMethod* method) 
+{
+	{
+		// get => m_Capabilities;
+		String_t* L_0 = __this->___m_Capabilities_6;
+		return L_0;
+	}
+}
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* InputDeviceDescription_get_interfaceName_m087CF7E83BAF1E6C6375B3F16A9FAA3A71717D07_inline (InputDeviceDescription_tE86DD77422AAF60ADDAC788B31E5A05E739B708F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -43020,12 +43091,17 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* InputDeviceDescription_
 		return L_0;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* InputDeviceDescription_get_capabilities_mEBF36ED5663709FCA039D1AEA87F6B6C404E76CD_inline (InputDeviceDescription_tE86DD77422AAF60ADDAC788B31E5A05E739B708F* __this, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void DualShockGamepad_set_hidDescriptor_m1F5D94BCCA35B4EACABD048AA7E097E24EC6233B_inline (DualShockGamepad_tFD374BEA0FEDE61EBC323C8F8CD595BAB5171C8B* __this, HIDDeviceDescriptor_tC52CF92386ACA63743BEFB7776A8C1E152A6DB59 ___value0, const RuntimeMethod* method) 
 {
 	{
-		// get => m_Capabilities;
-		String_t* L_0 = __this->___m_Capabilities_6;
-		return L_0;
+		// internal HID.HID.HIDDeviceDescriptor hidDescriptor { get; private set; }
+		HIDDeviceDescriptor_tC52CF92386ACA63743BEFB7776A8C1E152A6DB59 L_0 = ___value0;
+		__this->___U3ChidDescriptorU3Ek__BackingField_73 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)&(((&__this->___U3ChidDescriptorU3Ek__BackingField_73))->___elements_7), (void*)NULL);
+		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
+		Il2CppCodeGenWriteBarrier((void**)&(((&__this->___U3ChidDescriptorU3Ek__BackingField_73))->___collections_8), (void*)NULL);
+		#endif
+		return;
 	}
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* InputDeviceDescription_get_deviceClass_m59E89FD7B104B4E23CB6AA979500CD0330FFBF26_inline (InputDeviceDescription_tE86DD77422AAF60ADDAC788B31E5A05E739B708F* __this, const RuntimeMethod* method) 

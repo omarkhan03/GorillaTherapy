@@ -117,8 +117,13 @@ Library: D:\OmarKhan\2024\GorillaTherapy\Temp\StagingArea\tempburstlibs\arm64-v8
 --compilation-defines=ENABLE_INPUT_SYSTEM
 --compilation-defines=USE_INPUT_SYSTEM_POSE_CONTROL
 --compilation-defines=UNITY_POST_PROCESSING_STACK_V2
---compilation-defines=UNITY_ANALYTICS
---compilation-defines=INPUT_SYSTEM_POSE_VALID
+--compilation-defines=ANIMATION_MODULE_PRESENT
+--compilation-defines=PHYSICS2D_MODULE_PRESENT
+--compilation-defines=BURST_PRESENT
+--compilation-defines=XR_HANDS_1_1_OR_NEWER
+--compilation-defines=XR_HANDS_1_3_OR_NEWER
+--compilation-defines=XR_MANAGEMENT_4_0_OR_NEWER
+--compilation-defines=OPENXR_1_6_OR_NEWER
 --compilation-defines=CSHARP_7_OR_LATER
 --compilation-defines=CSHARP_7_3_OR_NEWER
 --compilation-defines=PACKAGE_PHYSICS
@@ -126,18 +131,9 @@ Library: D:\OmarKhan\2024\GorillaTherapy\Temp\StagingArea\tempburstlibs\arm64-v8
 --compilation-defines=PACKAGE_TILEMAP
 --compilation-defines=PACKAGE_ANIMATION
 --compilation-defines=PACKAGE_UITOOLKIT
---compilation-defines=PACKAGE_INPUT_SYSTEM_EXISTS
---compilation-defines=PACKAGE_INPUT_SYSTEM_1_2_0_OR_NEWER_EXISTS
---compilation-defines=MODULE_AI_EXISTS
---compilation-defines=MODULE_ANIMATION_EXISTS
---compilation-defines=MODULE_PHYSICS_EXISTS
---compilation-defines=MODULE_PHYSICS_2D_EXISTS
---compilation-defines=MODULE_PARTICLE_SYSTEM_EXISTS
---compilation-defines=ANIMATION_MODULE_PRESENT
---compilation-defines=PHYSICS2D_MODULE_PRESENT
---compilation-defines=BURST_PRESENT
---compilation-defines=XR_MANAGEMENT_4_0_OR_NEWER
---compilation-defines=OPENXR_1_6_OR_NEWER
+--compilation-defines=ENABLE_VR_MODULE
+--compilation-defines=ENABLE_XR_MODULE
+--compilation-defines=ENABLE_INPUT_SYSTEM_PACKAGE
 --compilation-defines=DISABLE_BUILTIN_INPUT_SYSTEM_OCULUS
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_VR
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_XR
@@ -146,15 +142,25 @@ Library: D:\OmarKhan\2024\GorillaTherapy\Temp\StagingArea\tempburstlibs\arm64-v8
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_UI
 --compilation-defines=UNITY_INPUT_SYSTEM_INPUT_ACTIONS_EDITOR_AUTO_SAVE_ON_FOCUS_LOST
 --compilation-defines=UNITY_INPUT_SYSTEM
+--compilation-defines=PACKAGE_INPUT_SYSTEM_EXISTS
+--compilation-defines=PACKAGE_INPUT_SYSTEM_1_2_0_OR_NEWER_EXISTS
+--compilation-defines=MODULE_AI_EXISTS
+--compilation-defines=MODULE_ANIMATION_EXISTS
+--compilation-defines=MODULE_PHYSICS_EXISTS
+--compilation-defines=MODULE_PHYSICS_2D_EXISTS
+--compilation-defines=MODULE_PARTICLE_SYSTEM_EXISTS
 --compilation-defines=XR_MGMT_GTE_320
---compilation-defines=TIMELINE_FRAMEACCURATE
+--compilation-defines=UNITY_OPENXR_PACKAGE
+--compilation-defines=UNITY_OPENXR_PACKAGE_1_2
+--compilation-defines=UNITY_OPENXR_PACKAGE_1_6
 --compilation-defines=INCLUDE_PHYSICS_MODULE
 --compilation-defines=INCLUDE_UGUI
 --compilation-defines=INCLUDE_INPUT_SYSTEM
 --compilation-defines=INCLUDE_LEGACY_INPUT_HELPERS
---compilation-defines=ENABLE_VR_MODULE
---compilation-defines=ENABLE_XR_MODULE
---compilation-defines=ENABLE_INPUT_SYSTEM_PACKAGE
+--compilation-defines=UNITY_ANALYTICS
+--compilation-defines=INPUT_SYSTEM_POSE_VALID
+--compilation-defines=TIMELINE_FRAMEACCURATE
+--compilation-defines=XR_HANDS_1_2_OR_NEWER
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\OmarKhan\2024\GorillaTherapy\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/AndroidPlayer
@@ -190,6 +196,7 @@ Library: D:\OmarKhan\2024\GorillaTherapy\Temp\StagingArea\tempburstlibs\arm64-v8
 --method=UnityEngine.XR.Interaction.Toolkit.Utilities.BurstMathUtility, Unity.XR.Interaction.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Angle(UnityEngine.Vector3&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|UnityEngine.Vector3&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Single&, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--01f8a636d5cdcc50bd56c5fd2984144a
 --method=UnityEngine.XR.Interaction.Toolkit.Utilities.BurstPhysicsUtils, Unity.XR.Interaction.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::GetSphereOverlapParameters(UnityEngine.Vector3&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|UnityEngine.Vector3&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|UnityEngine.Vector3&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Single&, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.Single&, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--ed0df4aaa6dfa655df2ce8f660cf6297
 --method=UnityEngine.XR.Interaction.Toolkit.Transformers.XRSocketGrabTransformer, Unity.XR.Interaction.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsWithinRadius(Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--1f5954d5199b755de462c537b1e97960
+--method=UnityEngine.XR.Hands.XRHandSkeletonDriver, Unity.XR.Hands, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::CalculateLocalTransformPose(UnityEngine.Pose&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|UnityEngine.Pose&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|UnityEngine.Pose&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null)--f254710114b3015fcc8337307d1eac3f
 --method=UnityEngine.XR.Interaction.Toolkit.Utilities.BurstMathUtility, Unity.XR.Interaction.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::OrthogonalUpVector(Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)--0efc5e11c4e2815f50262ff4ffe5d4d6
 --method=UnityEngine.XR.Interaction.Toolkit.Utilities.BurstMathUtility, Unity.XR.Interaction.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::OrthogonalLookRotation(Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Mathematics.quaternion&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)--8719466fc91fb9605ebc271437e7fd0c
 --method=Unity.Jobs.IJobExtensions+JobStruct`1[[UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Jobs.ColorTweenJob, Unity.XR.Interaction.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Jobs.ColorTweenJob&, Unity.XR.Interaction.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--25939b8474af666369f4cf1d8ab2eefc
