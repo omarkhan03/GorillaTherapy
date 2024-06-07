@@ -1478,6 +1478,7 @@ MonoBehaviour:
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
   jumpBox: {fileID: 0}
+  ForwardDirection: {fileID: 0}
   jump: {x: 0, y: 0, z: 0}
   jumpForce: 2
   isGrounded: 0
@@ -2620,7 +2621,8 @@ MonoBehaviour:
   leftHand: {fileID: 1255881087}
   rightHand: {fileID: 1404901544}
   jumpBox: {fileID: 1272551684}
-  jump: {x: 0, y: 0, z: 0}
+  ForwardDirection: {fileID: 1384039320}
+  jump: {x: 1, y: 1, z: 0}
   jumpForce: 2
   isGrounded: 0
   rb: {fileID: 1600127680}
