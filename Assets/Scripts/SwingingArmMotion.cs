@@ -72,7 +72,7 @@ public class SwingingArmMotion : MonoBehaviour
             ForwardDirection.transform.forward = MainCamera.transform.right * joystickValue.x + MainCamera.transform.forward * joystickValue.y;
         }
         
-        Debug.Log(ForwardDirection.transform.eulerAngles);
+        // Debug.Log(ForwardDirection.transform.eulerAngles);
 
 
         // get positons of hands

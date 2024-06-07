@@ -235,10 +235,7 @@ UnityEngine.Application::get_platform
 UnityEngine.AsyncOperation::InternalDestroy
 UnityEngine.AudioSettings::StartAudioOutput
 UnityEngine.AudioSettings::StopAudioOutput
-UnityEngine.AudioSource::Play
-UnityEngine.AudioSource::PlayHelper
 UnityEngine.AudioSource::PlayOneShotHelper
-UnityEngine.AudioSource::SetPitch
 UnityEngine.AudioSource::set_loop
 UnityEngine.AudioSource::set_playOnAwake
 UnityEngine.Behaviour::get_enabled
