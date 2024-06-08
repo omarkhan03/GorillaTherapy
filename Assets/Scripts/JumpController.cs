@@ -24,6 +24,7 @@ public class JumpController : MonoBehaviour
 
     public bool isGrounded;
     public Rigidbody rb;
+    public Collider body;
 
     private float leftVel = 1;
     private float rightVel = 1;
@@ -44,18 +45,8 @@ public class JumpController : MonoBehaviour
         {
             Jump();
         }
+        
     }
-
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //
-    //     if (other == leftHand || other == rightHand)
-    //     {
-    //         if (jumpBox.bounds.Intersects(leftHand.bounds) && jumpBox.bounds.Intersects(rightHand.bounds) && isGrounded)
-    //             Jump();
-    //     }
-    // }
-
 
     void OnCollisionEnter(Collision collision)
     {
@@ -71,12 +62,13 @@ public class JumpController : MonoBehaviour
         {
             rightVel = rightVelocity.magnitude;
         }
-        Debug.Log("left velocity = " + leftVel);
-        Debug.Log("right velocity = " + rightVel);
+        // Debug.Log("left velocity = " + leftVel);
+        // Debug.Log("right velocity = " + rightVel);
 
-        jumpForce = (leftVel + rightVel) / 2;
+        jumpForce = Mathf.Clamp(((leftVel + rightVel) / 3), 1.0f, 2.5f);
+
         
-        Debug.Log(jumpForce);
+        // Debug.Log(jumpForce);
         
         rb.AddForce(jump * jumpForce, ForceMode.Impulse);
         isGrounded = false;
