@@ -26,7 +26,7 @@ public class SwingingArmMotion : MonoBehaviour
     
     public VRInputActions inputActions;
 
-
+    private float yRotation;
     void Start()
     {
         PlayerPositionPreviousFrame = transform.position; //set current positions
@@ -60,7 +60,7 @@ public class SwingingArmMotion : MonoBehaviour
         Vector2 joystickValue = inputActions.Player.Joystick.ReadValue<Vector2>();
         
         // set forward direction (if joystick not used, default to the direction the player's head is facing)
-        float yRotation = MainCamera.transform.eulerAngles.y;
+        yRotation = MainCamera.transform.eulerAngles.y;
 
         if (joystickValue == Vector2.zero)
         {
