@@ -9,11 +9,14 @@ using UnityEngine.XR;
 public class JumpController : MonoBehaviour
 {
     private InputData _inputData;
+    
+    public Collider upJB;
+    public Collider forwardJB;
+
 
     
     public Collider leftHand;
     public Collider rightHand;
-    public Collider jumpBox;
     
     // [SerializeField] private GameObject MainCamera;
     [SerializeField] private GameObject ForwardDirection;
@@ -24,7 +27,6 @@ public class JumpController : MonoBehaviour
 
     public bool isGrounded;
     public Rigidbody rb;
-    public Collider body;
 
     private float leftVel = 1;
     private float rightVel = 1;
@@ -41,7 +43,7 @@ public class JumpController : MonoBehaviour
         
         jump = new Vector3(ForwardDirection.transform.forward.x, 3.0f, ForwardDirection.transform.forward.z);
 
-        if (jumpBox.bounds.Intersects(leftHand.bounds) && jumpBox.bounds.Intersects(rightHand.bounds) && isGrounded)
+        if (upJB.bounds.Intersects(leftHand.bounds) && upJB.bounds.Intersects(rightHand.bounds) && isGrounded)
         {
             Jump();
         }

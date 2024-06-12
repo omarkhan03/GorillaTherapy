@@ -7,7 +7,11 @@ public class FollowCameraCollider : MonoBehaviour
     public Transform mainCamera;  // Reference to the main camera
 
     public CapsuleCollider body;
-
+    public BoxCollider upJB;
+    public BoxCollider forwardJB;
+    public BoxCollider leftJB;
+    public BoxCollider rightJB;
+    
     private Vector3 offset;  // Offset between the camera and the collider
 
     private Vector3 originalPosition; 
@@ -27,6 +31,11 @@ public class FollowCameraCollider : MonoBehaviour
         // Debug.Log(offset);
 
         body.center = new Vector3(offset.x, body.center.y, offset.z);
+        upJB.center = new Vector3(offset.x, upJB.center.y, offset.z);
+        forwardJB.center = new Vector3(offset.x, forwardJB.center.y, offset.z);
+        leftJB.center = new Vector3(offset.x, leftJB.center.y, offset.z);
+        rightJB.center = new Vector3(offset.x, rightJB.center.y, offset.z);
+
 
         // transform.position = originalPosition + offset;
 
