@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FollowCameraCollider : MonoBehaviour
@@ -11,6 +12,8 @@ public class FollowCameraCollider : MonoBehaviour
     public BoxCollider forwardJB;
     public BoxCollider leftJB;
     public BoxCollider rightJB;
+
+    public GameObject JBContainer;
     
     private Vector3 offset;  // Offset between the camera and the collider
 
@@ -35,6 +38,12 @@ public class FollowCameraCollider : MonoBehaviour
         forwardJB.center = new Vector3(offset.x, forwardJB.center.y, offset.z);
         leftJB.center = new Vector3(offset.x, leftJB.center.y, offset.z);
         rightJB.center = new Vector3(offset.x, rightJB.center.y, offset.z);
+        
+        float yRotation = mainCamera.transform.eulerAngles.y;
+        JBContainer.transform.eulerAngles = new Vector3(0, yRotation, 0);
+
+
+        // JBContainer.transform.rotation.Set(JBContainer.transform.rotation.x, mainCamera.rotation.y, JBContainer.transform.rotation.z, JBContainer.transform.rotation.w);
 
 
         // transform.position = originalPosition + offset;

@@ -528,10 +528,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upJB: {fileID: 0}
   forwardJB: {fileID: 0}
+  rightJB: {fileID: 0}
+  leftJB: {fileID: 0}
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
   ForwardDirection: {fileID: 0}
-  jump: {x: 0, y: 0, z: 0}
+  jumpDir: {x: 0, y: 0, z: 0}
   jumpForce: 2
   isGrounded: 0
   rb: {fileID: 1600127680}
@@ -757,10 +759,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upJB: {fileID: 0}
   forwardJB: {fileID: 0}
+  rightJB: {fileID: 0}
+  leftJB: {fileID: 0}
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
   ForwardDirection: {fileID: 0}
-  jump: {x: 0, y: 0, z: 0}
+  jumpDir: {x: 0, y: 0, z: 0}
   jumpForce: 2
   isGrounded: 0
   rb: {fileID: 1600127680}
@@ -1741,10 +1745,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upJB: {fileID: 0}
   forwardJB: {fileID: 0}
+  rightJB: {fileID: 0}
+  leftJB: {fileID: 0}
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
   ForwardDirection: {fileID: 0}
-  jump: {x: 0, y: 0, z: 0}
+  jumpDir: {x: 0, y: 0, z: 0}
   jumpForce: 2
   isGrounded: 0
   rb: {fileID: 1600127680}
@@ -2873,6 +2879,7 @@ MonoBehaviour:
   forwardJB: {fileID: 589557330}
   leftJB: {fileID: 191036816}
   rightJB: {fileID: 1685737267}
+  JBContainer: {fileID: 1804191942}
 --- !u!114 &1600127691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2887,10 +2894,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upJB: {fileID: 1272551688}
   forwardJB: {fileID: 589557330}
+  rightJB: {fileID: 0}
+  leftJB: {fileID: 0}
   leftHand: {fileID: 1255881087}
   rightHand: {fileID: 1404901544}
   ForwardDirection: {fileID: 1384039320}
-  jump: {x: 1, y: 1, z: 0}
+  jumpDir: {x: 0, y: 0, z: 0}
   jumpForce: 2
   isGrounded: 0
   rb: {fileID: 1600127680}
@@ -3160,10 +3169,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upJB: {fileID: 0}
   forwardJB: {fileID: 0}
+  rightJB: {fileID: 0}
+  leftJB: {fileID: 0}
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
   ForwardDirection: {fileID: 0}
-  jump: {x: 0, y: 0, z: 0}
+  jumpDir: {x: 0, y: 0, z: 0}
   jumpForce: 2
   isGrounded: 0
   rb: {fileID: 1600127680}

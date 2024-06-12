@@ -12,7 +12,8 @@ public class JumpController : MonoBehaviour
     
     public Collider upJB;
     public Collider forwardJB;
-
+    public Collider rightJB;
+    public Collider leftJB;
 
     
     public Collider leftHand;
@@ -22,7 +23,7 @@ public class JumpController : MonoBehaviour
     [SerializeField] private GameObject ForwardDirection;
 
     
-    public Vector3 jump;
+    public Vector3 jumpDir;
     public float jumpForce = 2.0f;
 
     public bool isGrounded;
@@ -40,14 +41,18 @@ public class JumpController : MonoBehaviour
 
     private void Update()
     {
-        
-        jump = new Vector3(ForwardDirection.transform.forward.x, 3.0f, ForwardDirection.transform.forward.z);
 
         if (upJB.bounds.Intersects(leftHand.bounds) && upJB.bounds.Intersects(rightHand.bounds) && isGrounded)
         {
+            jumpDir = new Vector3(0, 3.0f, 0);
             Jump();
         }
-        
+        else if (forwardJB.bounds.Intersects(leftHand.bounds) && forwardJB.bounds.Intersects(rightHand.bounds) && isGrounded)
+        {
+            jumpDir = new Vector3(ForwardDirection.transform.forward.x, 3.0f, ForwardDirection.transform.forward.z);
+            Jump();
+        }
+
     }
 
     void OnCollisionEnter(Collision collision)
@@ -57,22 +62,14 @@ public class JumpController : MonoBehaviour
 
     void Jump(){
         if (_inputData._leftController.TryGetFeatureValue(CommonUsages.deviceVelocity, out Vector3 leftVelocity))
-        {
             leftVel = leftVelocity.magnitude;
-        }
+
         if (_inputData._rightController.TryGetFeatureValue(CommonUsages.deviceVelocity, out Vector3 rightVelocity))
-        {
             rightVel = rightVelocity.magnitude;
-        }
-        // Debug.Log("left velocity = " + leftVel);
-        // Debug.Log("right velocity = " + rightVel);
 
         jumpForce = Mathf.Clamp(((leftVel + rightVel) / 3), 1.0f, 2.5f);
-
+        rb.AddForce(jumpDir * jumpForce, ForceMode.Impulse);
         
-        // Debug.Log(jumpForce);
-        
-        rb.AddForce(jump * jumpForce, ForceMode.Impulse);
         isGrounded = false;
     }
     
