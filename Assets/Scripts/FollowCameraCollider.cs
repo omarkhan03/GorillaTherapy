@@ -8,10 +8,10 @@ public class FollowCameraCollider : MonoBehaviour
     public Transform mainCamera;  // Reference to the main camera
 
     public CapsuleCollider body;
-    public BoxCollider upJB;
-    public BoxCollider forwardJB;
-    public BoxCollider leftJB;
-    public BoxCollider rightJB;
+    public GameObject upJB;
+    public GameObject forwardJB;
+    public GameObject leftJB;
+    public GameObject rightJB;
 
     public GameObject JBContainer;
     
@@ -34,13 +34,27 @@ public class FollowCameraCollider : MonoBehaviour
         // Debug.Log(offset);
 
         body.center = new Vector3(offset.x, body.center.y, offset.z);
-        upJB.center = new Vector3(offset.x, upJB.center.y, offset.z);
-        forwardJB.center = new Vector3(offset.x, forwardJB.center.y, offset.z);
-        leftJB.center = new Vector3(offset.x, leftJB.center.y, offset.z);
-        rightJB.center = new Vector3(offset.x, rightJB.center.y, offset.z);
         
+        
+        
+        upJB.transform.localPosition = new Vector3(offset.x, upJB.transform.localPosition.y, offset.z);
+        forwardJB.transform.localPosition = new Vector3(offset.x, forwardJB.transform.localPosition.y, offset.z);
+        leftJB.transform.localPosition = new Vector3(offset.x, leftJB.transform.localPosition.y, offset.z);
+        rightJB.transform.localPosition = new Vector3(offset.x, rightJB.transform.localPosition.y, offset.z);
+
         float yRotation = mainCamera.transform.eulerAngles.y;
-        JBContainer.transform.eulerAngles = new Vector3(0, yRotation, 0);
+        // JBContainer.transform.eulerAngles = new Vector3(0, yRotation, 0);
+
+        upJB.transform.eulerAngles = new Vector3(0, yRotation, 0);
+        forwardJB.transform.eulerAngles = new Vector3(0, yRotation, 0);
+        leftJB.transform.eulerAngles = new Vector3(0, yRotation, 0);
+        rightJB.transform.eulerAngles = new Vector3(0, yRotation, 0);
+        
+        // upJB.transform.rotation = new Quaternion(0.0f, yRotation, 0.0f, 0.0f);
+        // forwardJB.transform.rotation =  new Quaternion(0.0f, yRotation, 0.0f, 0.0f);
+        // leftJB.transform.rotation =  new Quaternion(0.0f, yRotation, 0.0f, 0.0f);
+        // rightJB.transform.rotation =  new Quaternion(0.0f, yRotation, 0.0f, 0.0f);
+
 
 
         // JBContainer.transform.rotation.Set(JBContainer.transform.rotation.x, mainCamera.rotation.y, JBContainer.transform.rotation.z, JBContainer.transform.rotation.w);
