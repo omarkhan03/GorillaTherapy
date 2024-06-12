@@ -44,12 +44,23 @@ public class JumpController : MonoBehaviour
 
         if (upJB.bounds.Intersects(leftHand.bounds) && upJB.bounds.Intersects(rightHand.bounds) && isGrounded)
         {
-            jumpDir = new Vector3(0, 3.0f, 0);
+            jumpDir = new Vector3(0, 5.0f, 0);
             Jump();
         }
         else if (forwardJB.bounds.Intersects(leftHand.bounds) && forwardJB.bounds.Intersects(rightHand.bounds) && isGrounded)
         {
             jumpDir = new Vector3(ForwardDirection.transform.forward.x, 3.0f, ForwardDirection.transform.forward.z);
+            Jump();
+        }
+        else if (rightJB.bounds.Intersects(rightHand.bounds) && isGrounded)
+        {
+            jumpDir = new Vector3(ForwardDirection.transform.right.x, 3.0f, ForwardDirection.transform.right.z);
+            Jump();
+        }
+        else if (leftJB.bounds.Intersects(leftHand.bounds) && isGrounded)
+        {
+            jumpDir = new Vector3(-ForwardDirection.transform.right.x, 3.0f, -ForwardDirection.transform.right.z);
+
             Jump();
         }
 
