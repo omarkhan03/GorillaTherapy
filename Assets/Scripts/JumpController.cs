@@ -89,6 +89,11 @@ public class JumpController : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name.Equals("Ground")) isGrounded = true;
+        if (collision.gameObject.name.Equals("LadderTop"))
+        {
+            jumpDir = new Vector3(JumpDirection.transform.forward.x, 3.0f, JumpDirection.transform.forward.z) / 1.1f;
+            Jump("ladder");
+        }
     }
 
     void Jump(string side = null){
@@ -103,7 +108,7 @@ public class JumpController : MonoBehaviour
         else if (side == "right") realVel = rightVel;
         else realVel = leftVel;
 
-        jumpForce = Mathf.Clamp((realVel / 4.0f), 1.0f, 2.5f);
+        jumpForce = side == "ladder" ? 1f : Mathf.Clamp((realVel / 4.0f), 1.0f, 2.5f);
         rb.AddForce(jumpDir * jumpForce, ForceMode.Impulse);
         
         isGrounded = false;
