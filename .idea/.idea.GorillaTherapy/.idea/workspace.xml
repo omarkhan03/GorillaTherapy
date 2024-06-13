@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d2859a60-cc49-4ae3-aab5-020abd4421fa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GorillaTherapy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GorillaTherapy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/JumpController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/JumpController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ArmSwing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ArmSwing.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Gorilla 1.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Gorilla 1.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Gorilla.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Gorilla.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HandsDemoScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HandsDemoScene.unity.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1716859511607</updated>
       <workItem from="1716859513919" duration="161000" />
-      <workItem from="1717194586503" duration="41999000" />
+      <workItem from="1717194586503" duration="43092000" />
     </task>
     <servers />
   </component>
