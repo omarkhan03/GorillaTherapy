@@ -26,5 +26,5 @@ public class SceneControl : MonoBehaviour
             Debug.Log("detected");
             SceneManager.LoadScene(gorilla ? "ArmSwing" : "Gorilla");
         }
-}
+    }
 }
